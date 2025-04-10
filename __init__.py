@@ -4,7 +4,7 @@ from flask import json
 from urllib.request import urlopen
 import sqlite3
 
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
@@ -28,5 +28,5 @@ def decryptpage(token):
     except Exception as e:
         return f"Erreur lors du déchiffrement : {str(e)}"
 
-if name == "main":
+if __name__ == "__main__":
     app.run(debug=True)
